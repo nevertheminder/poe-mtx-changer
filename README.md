@@ -7,15 +7,15 @@
 Try on and swap Path of Exile 1 cosmetics on your own PC.<br>
 The changes are local: only you see them.
 
-<a href="https://github.com/nevertheminder/poe-mtx-changer/releases/latest"><img src="https://img.shields.io/badge/-Download%20for%20Windows-b5452a?style=for-the-badge&labelColor=b5452a&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMSAzaDJ2MTAuNmwzLjgtMy44IDEuNCAxLjRMMTIgMTcuNGwtNi4yLTYuMiAxLjQtMS40IDMuOCAzLjh6TTQgMTloMTZ2Mkg0eiIvPjwvc3ZnPg%3D%3D" width="380" alt="Download for Windows x64"></a>
+<a href="https://github.com/masterthekey/poe-mtx-changer/releases/latest"><img src="https://img.shields.io/badge/-Download%20for%20Windows-b5452a?style=for-the-badge&labelColor=b5452a&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMSAzaDJ2MTAuNmwzLjgtMy44IDEuNCAxLjRMMTIgMTcuNGwtNi4yLTYuMiAxLjQtMS40IDMuOCAzLjh6TTQgMTloMTZ2Mkg0eiIvPjwvc3ZnPg%3D%3D" width="380" alt="Download for Windows x64"></a>
 
-<a href="https://github.com/nevertheminder/poe-mtx-changer/releases/latest"><img src="https://img.shields.io/github/v/release/nevertheminder/poe-mtx-changer?style=for-the-badge&label=version&color=c9a35a" alt="Latest version"></a>
-<a href="https://github.com/nevertheminder/poe-mtx-changer/releases"><img src="https://img.shields.io/github/downloads/nevertheminder/poe-mtx-changer/total?style=for-the-badge&label=downloads&color=c9a35a" alt="Downloads"></a>
-<a href="https://github.com/nevertheminder/poe-mtx-changer/actions/workflows/build.yml"><img src="https://img.shields.io/github/actions/workflow/status/nevertheminder/poe-mtx-changer/build.yml?branch=main&style=for-the-badge&label=build" alt="Build status"></a>
+<a href="https://github.com/masterthekey/poe-mtx-changer/releases/latest"><img src="https://img.shields.io/github/v/release/masterthekey/poe-mtx-changer?style=for-the-badge&label=version&color=c9a35a" alt="Latest version"></a>
+<a href="https://github.com/masterthekey/poe-mtx-changer/releases"><img src="https://img.shields.io/github/downloads/masterthekey/poe-mtx-changer/total?style=for-the-badge&label=downloads&color=c9a35a" alt="Downloads"></a>
+<a href="https://github.com/masterthekey/poe-mtx-changer/actions/workflows/build.yml"><img src="https://img.shields.io/github/actions/workflow/status/masterthekey/poe-mtx-changer/build.yml?branch=main&style=for-the-badge&label=build" alt="Build status"></a>
 <a href="https://dotnet.microsoft.com/download/dotnet/10.0"><img src="https://img.shields.io/badge/.NET-10-512bd4?style=for-the-badge" alt=".NET 10"></a>
 <img src="https://img.shields.io/badge/game-PoE%201-6b4f2a?style=for-the-badge" alt="Path of Exile 1">
 
-[Install](#install) · [What it does](#what-it-does) · [Oodle](#oodle) · [Changelog](CHANGELOG.md) · [Report a bug](https://github.com/nevertheminder/poe-mtx-changer/issues/new/choose)
+[Install](#install) · [What it does](#what-it-does) · [Oodle](#oodle) · [Changelog](CHANGELOG.md) · [Report a bug](https://github.com/masterthekey/poe-mtx-changer/issues/new/choose)
 
 </div>
 
