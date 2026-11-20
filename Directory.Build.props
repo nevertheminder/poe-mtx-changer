@@ -10,4 +10,11 @@
     <Product>PoE MTX Changer</Product>
     <Copyright>PoE MTX Changer contributors. Not affiliated with Grinding Gear Games.</Copyright>
   </PropertyGroup>
+  <!-- Release builds carry no local paths: source paths are mapped to /src/ and debug info is embedded (no .pdb files). -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <DebugType>embedded</DebugType>
+    <PathMap>$(MSBuildThisFileDirectory)=/src/</PathMap>
+  </PropertyGroup>
 </Project>
