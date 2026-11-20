@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "notes": "Heuristic path rules for discovering cosmetic resources. They are NOT derived from the game's data tables and must be treated as guesses; every discovered item starts as Experimental or Unknown.",
+  "roots": [
+    { "prefix": "Art/Microtransactions/", "groupDepth": 2 },
+    { "prefix": "Metadata/Effects/Microtransactions/", "groupDepth": 2 },
+    { "prefix": "Metadata/Pet/", "groupDepth": 2 }
+  ],
+  "categoryRules": [
+    { "category": "Portal", "keywords": [ "portal" ] },
+    { "category": "Pet", "keywords": [ "pet", "pets" ] },
+    { "category": "WingsAndBack", "keywords": [ "wings", "wing", "back_attachment", "backattachment", "cloak", "cape" ] },
+    { "category": "FootprintsAndTrails", "keywords": [ "footprint", "footprints", "trail" ] },
+    { "category": "AuraAndHerald", "keywords": [ "aura", "auras", "herald" ] },
+    { "category": "CharacterEffect", "keywords": [ "character_effect", "charactereffect", "character_effects", "body_effect" ] },
+    { "category": "Helmet", "keywords": [ "helmet", "helmets", "helm", "hood", "mask" ] },
+    { "category": "Gloves", "keywords": [ "gloves", "glove", "gauntlets" ] },
+    { "category": "Boots", "keywords": [ "boots", "boot", "greaves" ] },
+    { "category": "Shield", "keywords": [ "shield", "shields" ] },
+    { "category": "BodyArmour", "keywords": [ "armour", "armor", "bodyarmour", "body_armour", "armoursets" ] },
+    { "category": "Weapon", "keywords": [ "weapon", "weapons", "sword", "axe", "mace", "bow", "staff", "wand", "dagger", "claw", "sceptre" ] },
+    { "category": "SkillEffect", "keywords": [ "skill", "skills", "spell", "spells", "skillgem", "skill_effects" ] }
+  ],
+  "categoryDefaults": {
+    "Pet": { "status": "Experimental", "reason": "Only replaces the art of a pet that is already summoned; the server must spawn a pet you own." },
+    "WingsAndBack": { "status": "Experimental", "reason": "Needs an equipped back attachment to replace; nothing is drawn when the slot is empty." },
+    "FootprintsAndTrails": { "status": "Experimental", "reason": "Needs equipped footprints to replace; base characters have no footprint effect." },
+    "CharacterEffect": { "status": "Experimental", "reason": "Needs an equipped character effect to replace." },
+    "SkillAudio": { "status": "Unsupported", "reason": "Skill sounds live inside FMOD .bank files; bank editing is not implemented." },
+    "Portal": { "status": "Experimental", "reason": "The default portal is always loaded, so a resource swap is possible; dependency closure must resolve." },
+    "SkillEffect": { "status": "Experimental", "reason": "Skill-to-resource mapping is heuristic until data tables are parsed." },
+    "*": { "status": "Experimental", "reason": "Discovered by path heuristics; verify dependencies before applying." }
+  }
+}

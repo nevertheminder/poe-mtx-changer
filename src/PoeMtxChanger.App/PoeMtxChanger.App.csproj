@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>PoeMtxChanger.App</RootNamespace>
+    <AssemblyName>PoeMtxChanger</AssemblyName>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <PlatformTarget>x64</PlatformTarget>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>false</SelfContained>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PoeMtxChanger.Core\PoeMtxChanger.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Design\*.png" />
+    <EmbeddedResource Include="..\..\native\preview\Preview.hlsl" LogicalName="PoeMtxChanger.Preview.hlsl" />
+    <None Include="..\..\THIRD-PARTY-NOTICES.md" Link="THIRD-PARTY-NOTICES.md" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <None Include="..\..\docs\licenses\*.txt" Link="licenses\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PreviewNativeDir>$(MSBuildProjectDirectory)\obj\preview-x64</PreviewNativeDir>
+    <PreviewNativeSource>$(MSBuildProjectDirectory)\..\..\native\preview</PreviewNativeSource>
+  </PropertyGroup>
+  <Target Name="BuildNativePreview" Condition="'$(OS)' == 'Windows_NT' and '$(DesignTimeBuild)' != 'true' and '$(BuildNativePreview)' != 'false'"
+          Inputs="$(PreviewNativeSource)\preview.cpp;$(PreviewNativeSource)\build.ps1" Outputs="$(PreviewNativeDir)\PoeMtxPreview.dll">
+    <Exec Command="powershell.exe -NoProfile -ExecutionPolicy Bypass -File &quot;$(PreviewNativeSource)\build.ps1&quot; -OutDir &quot;$(PreviewNativeDir)&quot;" />
+  </Target>
+  <Target Name="IncludeNativePreview" BeforeTargets="AssignTargetPaths" DependsOnTargets="BuildNativePreview">
+    <ItemGroup Condition="Exists('$(PreviewNativeDir)\PoeMtxPreview.dll')">
+      <Content Include="$(PreviewNativeDir)\PoeMtxPreview.dll" Link="PoeMtxPreview.dll" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    </ItemGroup>
+  </Target>
+
+</Project>

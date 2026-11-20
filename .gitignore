@@ -1,0 +1,9 @@
+bin/
+obj/
+.vs/
+*.user
+TestResults/
+*.pmc-staged
+artifacts/
+*.cso
+*.pdb

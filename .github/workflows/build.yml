@@ -1,0 +1,42 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+
+      # Also builds the native Direct3D renderer (native/preview/build.ps1 finds MSVC with vswhere).
+      - name: Build
+        run: dotnet build PoeMtxChanger.sln -c Release
+
+      # Tests that need a real game installation skip themselves on the runner.
+      - name: Test
+        run: dotnet test tests/PoeMtxChanger.Core.Tests -c Release --no-build
+
+      - name: Publish
+        run: dotnet publish src/PoeMtxChanger.App -c Release -o publish
+
+      - name: Check the native renderer was built
+        shell: pwsh
+        run: if (-not (Test-Path publish/PoeMtxPreview.dll)) { throw 'PoeMtxPreview.dll is missing from the publish folder.' }
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: PoE-MTX-Changer-win-x64
+          path: |
+            publish
+            !publish/*.pdb

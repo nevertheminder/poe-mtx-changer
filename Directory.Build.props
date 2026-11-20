@@ -1,0 +1,13 @@
+<Project>
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <Version>0.5.1</Version>
+    <Company>PoE MTX Changer contributors</Company>
+    <Product>PoE MTX Changer</Product>
+    <Copyright>PoE MTX Changer contributors. Not affiliated with Grinding Gear Games.</Copyright>
+  </PropertyGroup>
+</Project>

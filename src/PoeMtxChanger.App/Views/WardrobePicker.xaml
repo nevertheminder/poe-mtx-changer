@@ -1,0 +1,43 @@
+<Window x:Class="PoeMtxChanger.App.Views.WardrobePicker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Width="720" Height="690" MinWidth="560" MinHeight="430"
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False"
+        Background="{StaticResource Design.Background}" Foreground="{StaticResource B.Text}"
+        FontFamily="{StaticResource F.Body}" UseLayoutRounding="True">
+    <Border Margin="14" Padding="16" Style="{StaticResource Card}">
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top">
+                <TextBlock Text="{Binding Title, RelativeSource={RelativeSource AncestorType=Window}}" Style="{StaticResource T.Section}" Margin="0,0,0,10"/>
+                <TextBlock x:Name="TargetLabel" Text="Item equipped now" Style="{StaticResource T.Label}"/>
+                <ComboBox x:Name="Targets" DisplayMemberPath="Label" IsTextSearchEnabled="True" TextSearch.TextPath="Label"
+                          SelectionChanged="TargetChanged" Margin="0,0,0,10"/>
+                <TextBlock Text="Search" Style="{StaticResource T.Label}"/>
+                <TextBox x:Name="Search" TextChanged="SearchChanged" Margin="0,0,0,10"/>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Bottom" Margin="0,10,0,0">
+                <TextBlock x:Name="Info" TextWrapping="Wrap" MaxHeight="66" ToolTip="{Binding Text, RelativeSource={RelativeSource Self}}" Foreground="{StaticResource B.TextMuted}"/>
+                <WrapPanel Margin="0,10,0,0">
+                    <Button x:Name="Commit" Content="Save to profile" Style="{StaticResource Btn.Primary}" Click="SaveClicked" Margin="0,0,8,4" IsEnabled="False"/>
+                    <Button x:Name="Reset" Click="ResetClicked" Margin="0,0,8,4" Visibility="Collapsed"/>
+                    <Button x:Name="Extra" Click="ExtraClicked" Margin="0,0,8,4" Visibility="Collapsed"/>
+                    <Button Content="Close" IsCancel="True" Margin="0,0,0,4"/>
+                </WrapPanel>
+            </StackPanel>
+            <ListBox x:Name="Choices" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ChoiceChanged" MouseDoubleClick="ChoiceDoubleClick">
+                <ListBox.ItemsPanel><ItemsPanelTemplate><WrapPanel/></ItemsPanelTemplate></ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="142" Height="102" Margin="3" ToolTip="{Binding Detail}">
+                            <Grid.RowDefinitions><RowDefinition Height="56"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+                            <TextBlock Text="{Binding Mark}" FontFamily="{StaticResource F.Icons}" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource B.Gold}"/>
+                            <Image Source="{Binding Icon}" Width="62" Height="54"/>
+                            <TextBlock Grid.Row="1" Text="{Binding Name}" TextWrapping="Wrap" TextTrimming="CharacterEllipsis"
+                                       TextAlignment="Center" VerticalAlignment="Center" MaxHeight="42" Margin="3"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </DockPanel>
+    </Border>
+</Window>

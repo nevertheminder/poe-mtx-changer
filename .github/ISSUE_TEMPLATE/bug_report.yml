@@ -1,0 +1,94 @@
+name: Bug report
+description: Something does not work, crashes or gives a wrong result.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Please **do not attach game files, Oodle or FMOD libraries, or anything from your
+        account** (names, e-mail, Steam ID). Screenshots and the app's log are enough.
+
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      description: Shown in the window title, for example 0.5.0.
+      placeholder: 0.5.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: install
+    attributes:
+      label: Game installation
+      options:
+        - Steam
+        - Standalone (Content.ggpk)
+        - Epic Games
+        - Other / not sure
+    validations:
+      required: true
+
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      placeholder: Windows 11 24H2
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Catalog / applying / restoring
+        - 3D wardrobe / try-on
+        - Skill effects / auras
+        - FMOD sounds
+        - Profiles
+        - Settings / Oodle / installation detection
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected and what happened instead.
+      placeholder: |
+        1. Open …
+        2. Click …
+        3. …
+        Expected: …
+        Actual: …
+    validations:
+      required: true
+
+  - type: textarea
+    id: log
+    attributes:
+      label: Log
+      description: The relevant lines from `%AppData%\PoeMtxChanger\logs` (or Settings → Open the log folder).
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Drag images here if they help.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I am using the latest release.
+          required: false
+        - label: The game was closed when I applied or restored.
+          required: false

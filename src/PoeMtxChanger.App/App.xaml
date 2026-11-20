@@ -1,0 +1,23 @@
+﻿<Application x:Class="PoeMtxChanger.App.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:conv="clr-namespace:PoeMtxChanger.App.Converters"
+             ShutdownMode="OnMainWindowClose">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Theme.xaml"/>
+                <ResourceDictionary Source="Themes/Icons.xaml"/>
+                <ResourceDictionary Source="Themes/Controls.xaml"/>
+                <ResourceDictionary Source="Themes/ReferenceDesign.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <conv:BoolToVisibilityConverter x:Key="BoolToVis"/>
+            <conv:BoolToVisibilityConverter x:Key="InvBoolToVis" Invert="True"/>
+            <conv:NullToVisibilityConverter x:Key="NullToCollapsed"/>
+            <conv:NullToVisibilityConverter x:Key="NotNullToCollapsed" Invert="True"/>
+            <conv:EqualsToBoolConverter x:Key="EqualsToBool"/>
+            <conv:ResourceKeyConverter x:Key="ResKey"/>
+            <conv:EqualsToVisibilityConverter x:Key="EqualsToVis"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

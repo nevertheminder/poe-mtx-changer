@@ -1,0 +1,63 @@
+name: Wardrobe looks different from the game
+description: An item, effect or animation in the 3D wardrobe does not match how it looks in Path of Exile.
+labels: [rendering]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A side-by-side comparison helps most: the same item in the wardrobe and in the game, ideally from a similar
+        angle. Please do not attach game files.
+
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      placeholder: 0.5.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: items
+    attributes:
+      label: Items and effects
+      description: Exact shop names of everything involved (armour, weapon, weapon effect, character effect, aura…).
+      placeholder: |
+        Body armour: …
+        Weapon effect: …
+    validations:
+      required: true
+
+  - type: textarea
+    id: difference
+    attributes:
+      label: What is different
+      description: Missing or extra glow, wrong colour, stiff cloth, particles in the wrong place, animation…
+    validations:
+      required: true
+
+  - type: dropdown
+    id: lighting
+    attributes:
+      label: Wardrobe lighting
+      options:
+        - Neutral
+        - Warm
+        - Muted
+        - PoE · post-processing
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: switches
+    attributes:
+      label: Wardrobe switches
+      options:
+        - label: Animation on
+        - label: Cloth physics on
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots (wardrobe and game)
+    validations:
+      required: true
