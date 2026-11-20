@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.2 (2026-11-21)
+
+- The window title no longer says "(Prototype)".
+- The header artwork fills the whole width on windows wider than 1536 px.
+- Release builds no longer contain build paths from the developer's PC.
+
 ## 0.5.1 (2026-11-21)
 
 First public release.
