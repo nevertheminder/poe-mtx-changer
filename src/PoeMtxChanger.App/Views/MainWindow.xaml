@@ -6,7 +6,7 @@
         xmlns:vm="clr-namespace:PoeMtxChanger.App.ViewModels"
         xmlns:views="clr-namespace:PoeMtxChanger.App.Views"
         mc:Ignorable="d" d:DataContext="{d:DesignInstance vm:MainViewModel}"
-        Title="PoE MTX Changer (Prototype)" Width="1536" Height="1024" MinWidth="1200" MinHeight="760"
+        Title="PoE MTX Changer" Width="1536" Height="1024" MinWidth="1200" MinHeight="760"
         WindowStyle="None" WindowStartupLocation="CenterScreen" Background="{StaticResource Design.Background}"
         FontFamily="{StaticResource F.Body}" Foreground="{StaticResource B.Text}"
         TextOptions.TextFormattingMode="Ideal" UseLayoutRounding="True">
@@ -30,7 +30,7 @@
             <Border BorderBrush="#4D4530" BorderThickness="0,0,0,1" IsHitTestVisible="False"/>
             <StackPanel Orientation="Horizontal" Margin="12,0,0,0" VerticalAlignment="Center">
                 <Image Source="/PoeMtxChanger;component/Assets/Design/window-logo.png" Width="27" Height="27"/>
-                <TextBlock Text="PoE MTX Changer (Prototype)" Margin="8,0,0,0" FontFamily="Times New Roman" FontSize="19" VerticalAlignment="Center" Foreground="{StaticResource B.Text}"/>
+                <TextBlock Text="PoE MTX Changer" Margin="8,0,0,0" FontFamily="Times New Roman" FontSize="19" VerticalAlignment="Center" Foreground="{StaticResource B.Text}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock Text="{Binding VersionText}" Foreground="{StaticResource B.TextMuted}" FontSize="14" VerticalAlignment="Center" Margin="0,0,14,0"/>
@@ -41,7 +41,11 @@
         </Grid>
 
         <!-- Header artwork (original emblem and background); the title is live WPF text. -->
-        <Grid Grid.Row="1" ClipToBounds="True" Background="#090B0C">
+        <Grid Grid.Row="1" ClipToBounds="True">
+            <!-- Wider windows continue the artwork with its last pixel column (background and gold rules). -->
+            <Grid.Background>
+                <ImageBrush ImageSource="/PoeMtxChanger;component/Assets/Design/header.png" Viewbox="1535,0,1,115" ViewboxUnits="Absolute" Stretch="Fill"/>
+            </Grid.Background>
             <Image Source="/PoeMtxChanger;component/Assets/Design/header.png" Stretch="Fill" Width="1536" HorizontalAlignment="Left"/>
             <StackPanel Margin="217,13,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
                 <TextBlock Text="PoE MTX Changer" FontFamily="Times New Roman" FontSize="40" FontWeight="Bold" Foreground="#E6DFCD"/>
